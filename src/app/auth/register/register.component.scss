@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+
+
+.heading {
+    position: absolute;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    text-align: left;
+}
+
+.container {
+    padding: 1rem 2rem;
+}
+
+.column-main {
+    margin-top: 1rem;
+}
+
+.row {
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 20px;
+    -webkit-box-shadow: -7px 20px 39px 6px rgba(0, 0, 0, 0.54);
+    -moz-box-shadow: -7px 20px 39px 6px rgba(0, 0, 0, 0.54);
+    box-shadow: -7px 20px 39px 6px rgba(0, 0, 0, 0.54);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.login-span {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(118, 18, 184)
+}

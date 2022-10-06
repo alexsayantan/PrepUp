@@ -1,0 +1,64 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+          <h1 class="heading text-center">Sign Up</h1>
+            <div class="column-main col-md-6 offset-md-3">
+                <div class="container text-center">
+                    <ng-lottie [options]="options" width="100%" height="170px"></ng-lottie>
+                </div>
+
+                <form class="text-center" [formGroup]="user" (ngSubmit)="formSubmit()">
+                    
+                    <!--Username-->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input formControlName="username" type="text" matInput placeholder="e.g. alex">
+                        <mat-icon matSuffix>person</mat-icon>
+                        <!--<mat-error *ngIf="username?.errors?.['required']">This field can't be empty</mat-error>-->
+                    </mat-form-field>
+
+                      <!--Password-->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input formControlName="password" [(ngModel)]="passLen" type="password" matInput placeholder="e.g. 123@bc$">
+                        <mat-icon matSuffix>fingerprint</mat-icon>
+                      </mat-form-field>
+
+                      <!--First Name-->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input formControlName="firstName" type="text" matInput placeholder="e.g. Alex">
+                        <mat-icon matSuffix>edit</mat-icon>
+                      </mat-form-field>
+
+                      <!--Last Name-->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input formControlName="lastName" type="text" matInput placeholder="e.g. Caprico">
+                        <mat-icon matSuffix>edit</mat-icon>
+                      </mat-form-field>
+
+                      <!--Email-->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input formControlName="email" type="email" matInput placeholder="e.g. alexcaprico@demo.com">
+                        <mat-icon matSuffix>email</mat-icon>
+                      </mat-form-field>
+
+                      <!--Phone Number-->
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Phone Number</mat-label>
+                        <input formControlName="phone" type="number" matInput placeholder="e.g. 1234567890">
+                        <mat-icon matSuffix>phone</mat-icon>
+                      </mat-form-field>
+
+                    <div class="container">
+                        <button mat-raised-button color="primary">Register</button>
+                    </div>
+                    <span>Already a member! <a class="login-span" routerLink="/login">Log In</a></span>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
