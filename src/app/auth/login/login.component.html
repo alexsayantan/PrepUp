@@ -6,7 +6,7 @@
                 <div class="container text-center">
                     <ng-lottie [options]="options" width="100%" height="170px"></ng-lottie>
                 </div>
-                <form class="text-center">
+                <form class="text-center" [formGroup]="user" (ngSubmit)="formSubmit()">
 
                     <!--Username Field-->
                     <mat-form-field class="full-width" appearance="outline">
@@ -18,7 +18,7 @@
                     <!--Password Field-->
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input formControlName="username" type="password" matInput placeholder="e.g. 123abc@">
+                        <input formControlName="password" type="password" matInput placeholder="e.g. 123abc@">
                         <mat-icon matSuffix>lock</mat-icon>
                     </mat-form-field>
 
