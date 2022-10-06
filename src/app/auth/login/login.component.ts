@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HotToastService } from '@ngneat/hot-toast';
 import { AnimationOptions } from 'ngx-lottie';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,9 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required),
   })
 
-  constructor() { }
+  constructor(private hotToast: HotToastService,
+    private loginService: LoginService
+    ) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +28,28 @@ export class LoginComponent implements OnInit {
   }
 
   formSubmit(){
-    
+    if(this.user.value.username?.trim() == '' || this.user.value.username?.trim() == null) {
+      this.hotToast.error('Username is required!', {
+        duration: 3000,
+      });
+      return;
+    }
+    if(this.user.value.password?.trim() == '' || this.user.value.password?.trim() == null) {
+      this.hotToast.error('Password is required!', {
+        duration: 3000,
+      });
+      return;
+    }
+
+    //request to server to generate token
+    this.loginService.generateToken(this.user.value).subscribe(
+      (data: any) => {
+        console.log(data);
+      },
+      (err: any) => {
+        console.log(err);
+      }
+    )
+
   }
 }
