@@ -1,1 +1,30 @@
-<app-navbar></app-navbar>
+<mat-toolbar color="primary">
+    <span>PrepUp</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" routerLink="/home">
+        <mat-icon class="home-mat">home</mat-icon>
+    </button>
+    <button class="menu-button"  mat-icon-button [matMenuTriggerFor]="afterMenu">
+        <mat-icon class="menu-button-icon">account_circle</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-menu #afterMenu="matMenu">
+    <button *ngIf="!isLoggedIn" routerLink="/login" mat-menu-item>
+        <mat-icon>login</mat-icon>
+        Login
+    </button>
+    <button *ngIf="!isLoggedIn" routerLink="/register" mat-menu-item>
+        <mat-icon>face</mat-icon>
+        Register
+    </button>
+
+    <button *ngIf="isLoggedIn" mat-menu-item>
+        <mat-icon>face</mat-icon>
+        Profile
+    </button>
+    <button *ngIf="isLoggedIn" (click)="logout()" mat-menu-item>
+        <mat-icon>login</mat-icon>
+        Logout
+    </button>
+</mat-menu>

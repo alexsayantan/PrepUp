@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { AnimationOptions } from 'ngx-lottie';
+import { LoginService } from 'src/app/services/login.service';
 import { RegisterService } from 'src/app/services/register.service';
 
 @Component({
@@ -23,7 +25,10 @@ export class RegisterComponent implements OnInit {
   })
 
 
-  constructor(private registerService: RegisterService, private toast: HotToastService) { }
+  constructor(
+    private registerService: RegisterService,
+    private toast: HotToastService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -60,7 +65,7 @@ export class RegisterComponent implements OnInit {
     else if (this.user.value.email === '' || this.user.value.email === null) {
       this.toast.error("Email can't be empty!");
       return;
-    }
+    } 
 
     this.registerService.addUser(this.user.value)
       .pipe(
@@ -71,6 +76,10 @@ export class RegisterComponent implements OnInit {
         })
       )
       .subscribe();
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 2000)
+      
 
   }
 }

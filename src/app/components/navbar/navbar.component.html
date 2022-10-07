@@ -1,21 +1,29 @@
 <mat-toolbar color="primary">
     <span>PrepUp</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" routerLink="/home">
-        <mat-icon>home</mat-icon>
+    <button class="menu-button"  mat-button [matMenuTriggerFor]="afterMenu">
+        <mat-icon class="menu-button-icon">account_circle</mat-icon>
+        <span class="user-firstname">{{ user.firstName }}</span>
+        <mat-icon>expand_more</mat-icon>
     </button>
-    <button mat-button [matMenuTriggerFor]="afterMenu">
-        <mat-icon>account_circle</mat-icon>
-    </button>
+    <mat-menu #afterMenu="matMenu" xPosition="before">
+        <button *ngIf="!isLoggedIn" mat-menu-item>
+            <mat-icon>login</mat-icon>
+            Login
+        </button>
+        <button *ngIf="!isLoggedIn" mat-menu-item>
+            <mat-icon>face</mat-icon>
+            Register
+        </button>
+    
+        <button *ngIf="isLoggedIn" mat-menu-item>
+            <mat-icon>face</mat-icon>
+            Profile
+        </button>
+        <button *ngIf="isLoggedIn" (click)="logout()" mat-menu-item>
+            <mat-icon>login</mat-icon>
+            Logout
+        </button>
+    </mat-menu>
 </mat-toolbar>
 
-<mat-menu class="mat-menu-content" #afterMenu="matMenu" xPosition="after">
-    <button mat-menu-item>
-        <mat-icon>login</mat-icon>
-        Login
-    </button>
-    <button mat-menu-item>
-        <mat-icon>face</mat-icon>
-        Register
-    </button>
-</mat-menu>
