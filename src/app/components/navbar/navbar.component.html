@@ -4,7 +4,18 @@
     <button mat-icon-button class="example-icon favorite-icon" routerLink="/home">
         <mat-icon>home</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" routerLink="/login" >
-        <mat-icon>login</mat-icon>
+    <button mat-button [matMenuTriggerFor]="afterMenu">
+        <mat-icon>account_circle</mat-icon>
     </button>
 </mat-toolbar>
+
+<mat-menu class="mat-menu-content" #afterMenu="matMenu" xPosition="after">
+    <button mat-menu-item>
+        <mat-icon>login</mat-icon>
+        Login
+    </button>
+    <button mat-menu-item>
+        <mat-icon>face</mat-icon>
+        Register
+    </button>
+</mat-menu>

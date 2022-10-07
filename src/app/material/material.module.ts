@@ -8,7 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import {MatToolbar, MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
 
 const material: any[] = [
   CommonModule,
@@ -19,7 +20,8 @@ const material: any[] = [
   MatFormFieldModule,
   MatIconModule,
   MatCardModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatMenuModule
 ];
 
 @NgModule({
