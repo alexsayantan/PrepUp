@@ -10,6 +10,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
+
+
 
 const material: any[] = [
   CommonModule,
@@ -21,7 +24,8 @@ const material: any[] = [
   MatIconModule,
   MatCardModule,
   MatToolbarModule,
-  MatMenuModule
+  MatMenuModule,
+  MatListModule
 ];
 
 @NgModule({
