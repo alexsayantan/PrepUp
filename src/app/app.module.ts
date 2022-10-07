@@ -7,12 +7,15 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { LottieModule } from 'ngx-lottie';
-import  player  from 'lottie-web';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { HomeComponent } from './main/home/home.component';
+import { AuthInterceptorProvider } from './services/auth.interceptor';
+import { UserdashboardComponent } from './main/user/userdashboard/userdashboard.component';
+import { AdmindashboardComponent } from './main/admin/admindashboard/admindashboard.component';
+import { LottieModule } from 'ngx-lottie';
+import  player  from 'lottie-web';
 
 export function playerFactory(){
   return player;
@@ -25,7 +28,9 @@ export function playerFactory(){
     LoginComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    UserdashboardComponent,
+    AdmindashboardComponent,
   ],
   imports: [
     LottieModule.forRoot({player: playerFactory}),
@@ -39,7 +44,7 @@ export function playerFactory(){
       position: 'bottom-center',
     })
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
