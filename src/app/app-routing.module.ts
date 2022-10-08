@@ -10,6 +10,8 @@ import { AdminguardGuard } from './services/adminguard.guard';
 import { LoginguardGuard } from './services/loginguard.guard';
 import { NormalguardGuard } from './services/normalguard.guard';
 import { StartuiComponent } from './main/admin/startui/startui.component';
+import { CategoriesComponent } from './main/admin/categories/categories.component';
+import { AddcategoriesComponent } from './main/admin/addcategories/addcategories.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -24,7 +26,14 @@ const routes: Routes = [
       },
       {
         path: 'profile', component: ProfileComponent, pathMatch: 'full'
-      }]
+      },
+      { 
+        path: 'categories', component: CategoriesComponent, pathMatch: 'full' 
+      },
+      { 
+        path: 'addcategories', component: AddcategoriesComponent, pathMatch: 'full' 
+      },
+    ]
   },
   { path: 'user', component: UserdashboardComponent, pathMatch: 'full', canActivate: [NormalguardGuard] },
 

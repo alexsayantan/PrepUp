@@ -1,0 +1,33 @@
+<mat-card class="mat-card">
+    <h1 class="category-heading">Add New Category</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form class="text-center" [formGroup]="category" (ngSubmit)="formSubmit()">
+
+                        <!--Enter Title-->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Title</mat-label>
+                            <input autofocus formControlName="title" type="text" matInput placeholder="e.g. Angular Series">
+                            <mat-icon matSuffix>generating_tokens</mat-icon>
+                        </mat-form-field>
+
+                        <!-- Enter Description -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Description</mat-label>
+                            <textarea formControlName="description" rows="20" matInput placeholder="e.g. Enter Category Description">
+                            </textarea>
+                        </mat-form-field>
+                        <div class="container">
+                            <button mat-mini-fab color="primary" matTooltip="Click to add new category">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+

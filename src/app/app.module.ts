@@ -19,6 +19,8 @@ import  player  from 'lottie-web';
 import { ProfileComponent } from './main/admin/profile/profile.component';
 import { SidebarComponent } from './main/admin/sidebar/sidebar.component';
 import { StartuiComponent } from './main/admin/startui/startui.component';
+import { CategoriesComponent } from './main/admin/categories/categories.component';
+import { AddcategoriesComponent } from './main/admin/addcategories/addcategories.component';
 
 export function playerFactory(){
   return player;
@@ -37,6 +39,8 @@ export function playerFactory(){
     ProfileComponent,
     SidebarComponent,
     StartuiComponent,
+    CategoriesComponent,
+    AddcategoriesComponent,
   ],
   imports: [
     LottieModule.forRoot({player: playerFactory}),

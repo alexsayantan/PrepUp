@@ -4,8 +4,17 @@
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+       background-color: rgb(232, 231, 233); }
 
 .text-center { 
     text-align: center; 
+}
+
+.m20 {
+    margin-top: 20px;
+}
+
+.full-width {
+    width: 100%;
 }

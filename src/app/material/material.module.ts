@@ -12,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -27,7 +28,8 @@ const material: any[] = [
   MatToolbarModule,
   MatMenuModule,
   MatListModule,
-  MatTableModule
+  MatTableModule,
+  MatTooltipModule,
 ];
 
 @NgModule({
