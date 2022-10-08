@@ -21,6 +21,8 @@ import { SidebarComponent } from './main/admin/sidebar/sidebar.component';
 import { StartuiComponent } from './main/admin/startui/startui.component';
 import { CategoriesComponent } from './main/admin/categories/categories.component';
 import { AddcategoriesComponent } from './main/admin/addcategories/addcategories.component';
+import { QuizzesComponent } from './main/admin/quizzes/quizzes.component';
+import { AddquizzesComponent } from './main/admin/addquizzes/addquizzes.component';
 
 export function playerFactory(){
   return player;
@@ -41,6 +43,8 @@ export function playerFactory(){
     StartuiComponent,
     CategoriesComponent,
     AddcategoriesComponent,
+    QuizzesComponent,
+    AddquizzesComponent,
   ],
   imports: [
     LottieModule.forRoot({player: playerFactory}),

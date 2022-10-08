@@ -12,6 +12,8 @@ import { NormalguardGuard } from './services/normalguard.guard';
 import { StartuiComponent } from './main/admin/startui/startui.component';
 import { CategoriesComponent } from './main/admin/categories/categories.component';
 import { AddcategoriesComponent } from './main/admin/addcategories/addcategories.component';
+import { QuizzesComponent } from './main/admin/quizzes/quizzes.component';
+import { AddquizzesComponent } from './main/admin/addquizzes/addquizzes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -32,6 +34,12 @@ const routes: Routes = [
       },
       { 
         path: 'addcategories', component: AddcategoriesComponent, pathMatch: 'full' 
+      },
+      { 
+        path: 'quizzes', component: QuizzesComponent, pathMatch: 'full' 
+      },
+      { 
+        path: 'addquizzes', component: AddquizzesComponent, pathMatch: 'full' 
       },
     ]
   },

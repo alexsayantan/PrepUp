@@ -16,11 +16,18 @@
 
 .profile-pic-name {
     margin-top: 1rem;
+
+}
+
+.row {
     
 }
 
 .table-main {
+
+    margin: 0;
     width: 100%;
+    table-layout: fixed;
     padding: 0.5rem;
     border: 1px solid #ffffff;
     border-radius: 20px;
@@ -39,5 +46,3 @@
     cursor: pointer;
     transition: .4s ease-in-out;
 }
-
-
