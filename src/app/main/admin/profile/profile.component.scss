@@ -1,0 +1,43 @@
+.profile-heading {
+    padding-top: 30px;
+    padding-left: 20px;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+
+}
+
+.profile-pic {
+    max-width: 150px;
+    max-height: 150px;
+    border: 2px solid #673ab7;
+    border-radius: 50%;
+    box-shadow: -7px 20px 39px 6px rgba(46, 45, 45, 0.54);
+}
+
+.profile-pic-name {
+    margin-top: 1rem;
+    
+}
+
+.table-main {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    box-shadow: -7px 20px 39px 6px rgba(46, 45, 45, 0.54);
+    margin-bottom: 2rem;
+}
+
+.table-main tr td {
+    padding: 20px 50px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.table-main tr .td-data:hover {
+    box-shadow: -7px 20px 39px 6px rgba(46, 45, 45, 0.54);
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+

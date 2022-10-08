@@ -6,3 +6,11 @@
 //     -moz-box-shadow: -7px 20px 39px 6px rgba(0, 0, 0, 0.54);
 //     box-shadow: -7px 20px 39px 6px rgba(0, 0, 0, 0.54);
 // }
+
+.example-card {
+    max-width: 400px;
+    text-align: center;
+    .mat-list-item {
+        
+    }
+  }

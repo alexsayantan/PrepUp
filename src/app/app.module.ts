@@ -16,8 +16,9 @@ import { UserdashboardComponent } from './main/user/userdashboard/userdashboard.
 import { AdmindashboardComponent } from './main/admin/admindashboard/admindashboard.component';
 import { LottieModule } from 'ngx-lottie';
 import  player  from 'lottie-web';
-import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileComponent } from './main/admin/profile/profile.component';
 import { SidebarComponent } from './main/admin/sidebar/sidebar.component';
+import { StartuiComponent } from './main/admin/startui/startui.component';
 
 export function playerFactory(){
   return player;
@@ -35,6 +36,7 @@ export function playerFactory(){
     AdmindashboardComponent,
     ProfileComponent,
     SidebarComponent,
+    StartuiComponent,
   ],
   imports: [
     LottieModule.forRoot({player: playerFactory}),

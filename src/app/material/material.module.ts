@@ -8,9 +8,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -25,7 +26,8 @@ const material: any[] = [
   MatCardModule,
   MatToolbarModule,
   MatMenuModule,
-  MatListModule
+  MatListModule,
+  MatTableModule
 ];
 
 @NgModule({

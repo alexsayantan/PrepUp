@@ -16,10 +16,10 @@
             Register
         </button>
     
-        <button *ngIf="isLoggedIn" mat-menu-item>
+        <!-- <button *ngIf="isLoggedIn" mat-menu-item>
             <mat-icon>face</mat-icon>
             Profile
-        </button>
+        </button> -->
         <button *ngIf="isLoggedIn" (click)="logout()" mat-menu-item>
             <mat-icon>login</mat-icon>
             Logout

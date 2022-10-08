@@ -1,0 +1,41 @@
+<h1 class="profile-heading">Profile</h1>
+<mat-card-content *ngIf="user">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="container text-center">
+                <img src="https://thumbs.dreamstime.com/b/default-profile-picture-avatar-photo-placeholder-vector-illustration-default-profile-picture-avatar-photo-placeholder-vector-189495158.jpg"
+                    alt="Profile.pic" class="profile-pic">
+                <h1 class="profile-pic-name">Sayantan Saha</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <table class="table-main">
+                        <tr>
+                            <td>Username</td>
+                            <td class="td-data">{{ user.username }}</td>
+                        </tr>
+                        <tr>
+                            <td>Name</td>
+                            <td class="td-data">{{ user.firstName }} {{user.lastName}} </td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td class="td-data"> {{user.phone}} </td>
+                        </tr>
+                        <tr>
+                            <td>Authority</td>
+                            <td class="td-data">{{user.authorities[0].authority}}</td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td class="td-data">{{user.enabled?"Active":"Inactive"}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <mat-card-actions class="text-center">
+                <button mat-raised-button color="primary">Update</button>
+            </mat-card-actions>
+        </div>
+    </div>
+</mat-card-content>
