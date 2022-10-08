@@ -2,9 +2,15 @@
     <mat-list>
         <div mat-subheader>All Quizzes</div>
     </mat-list>    
+    <mat-card *ngFor="let q of quizzes">
+        <mat-card-title> {{ q.title }} </mat-card-title>
+        <mat-card-subtitle> {{ q.description }} </mat-card-subtitle>
+    </mat-card>
     <div class="container text-center m20">
         <button mat-mini-fab color="primary" routerLink="/admin/addcategories" matTooltip="Click to add new category">
             <mat-icon>add</mat-icon>
         </button>
     </div>
 </mat-card>
+
+ 

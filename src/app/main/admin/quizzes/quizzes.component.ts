@@ -7,6 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizzesComponent implements OnInit {
 
+  quizzes = [
+    {
+      qId: 23,
+      title: "Java Series",
+      description: "This is Java",
+      maxMarks: "100",
+      numberOfQuestions: "20",
+      active: ""
+    },
+
+    {
+      qId: 23,
+      title: "Java Series",
+      description: "This is Java",
+      maxMarks: "100",
+      numberOfQuestions: "20",
+      active: ""
+    },
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
