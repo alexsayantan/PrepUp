@@ -1,0 +1,89 @@
+<mat-card class="mat-card">
+    <h1 class="category-heading">Add New Question: {{ qTitle}} </h1>
+    <br>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-10 offset-1">
+                    <mat-card-subtitle>Enter the details of new question</mat-card-subtitle>
+                    <form class="text-center" (submit)="formSubmit()">
+
+                        <!-- Enter Content -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Content</mat-label>
+                            <textarea [(ngModel)]="question.content" name="content" rows="8" matInput
+                                placeholder="e.g. Enter Question Description">
+                            </textarea>
+                        </mat-form-field>
+
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <!-- Option1-->
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Option 1</mat-label>
+                                    <input [(ngModel)]="question.option1" name="option1" autofocus type="text" matInput>
+                                    <mat-icon matSuffix>generating_tokens</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Option2-->
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Option 2</mat-label>
+                                    <input [(ngModel)]="question.option2" name="option2" autofocus type="text" matInput>
+                                    <mat-icon matSuffix>generating_tokens</mat-icon>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <!-- Option3-->
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Option 3</mat-label>
+                                    <input [(ngModel)]="question.option3" name="option3" autofocus type="text" matInput>
+                                    <mat-icon matSuffix>generating_tokens</mat-icon>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Option4-->
+                                <mat-form-field class="full-width" appearance="outline">
+                                    <mat-label>Option 4</mat-label>
+                                    <input [(ngModel)]="question.option4" name="option4" autofocus type="text" matInput>
+                                    <mat-icon matSuffix>generating_tokens</mat-icon>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <!--Answer-->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Select Answer</mat-label>
+                            <mat-select [(ngModel)]="question.answer" name="answer" >
+                                <mat-option *ngIf="question.option1" [value]="question.option1">
+                                    {{ question.option1 }}
+                                </mat-option>
+                                <mat-option *ngIf="question.option2" [value]="question.option2">
+                                    {{ question.option2 }}
+                                </mat-option>
+                                <mat-option *ngIf="question.option3" [value]="question.option3">
+                                    {{ question.option3 }}
+                                </mat-option>
+                                <mat-option *ngIf="question.option4" [value]="question.option4">
+                                    {{ question.option4 }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+
+                        <div class="container">
+                            <button mat-mini-fab color="primary" matTooltip="Click to add new question">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

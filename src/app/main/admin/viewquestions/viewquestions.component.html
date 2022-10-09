@@ -1,10 +1,45 @@
-<mat-card class="mat-card">
+<mat-card>
     <h1 class="category-heading">Questions on {{ qTitle }} </h1>
     <mat-card-content>
+        <div class="container text-center">
+            <button mat-stroked-button class="half-width" color="primary" [routerLink]=" '/admin/add-questions/' + qid + '/' + qTitle "> 
+                <mat-icon>add_circle</mat-icon> Add
+            </button>
+        </div>
         <div class="bootstrap-wrapper">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    
+                <div class="col-md-12">
+                    <mat-card class="mat-subcard" *ngFor="let q of questions; let i = index">
+
+                        <mat-card-content>
+                            <p>
+                                Q{{ i+1 }}. <span class="ml20" [innerHTML]="q.content"></span>
+                            </p>
+                            <br>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>1) {{ q.option1 }} </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>2) {{ q.option2 }} </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p>3) {{ q.option3 }} </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>4) {{ q.option4 }} </p>
+                                    </div>
+                                </div>
+                                <mat-divider></mat-divider>
+                                <p class="mt20">Correct Answer : {{q.answer}}</p>
+                            </div>
+                           
+                        </mat-card-content>
+
+                    </mat-card>
                 </div>
             </div>
         </div>

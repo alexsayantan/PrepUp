@@ -25,6 +25,7 @@ import { QuizzesComponent } from './main/admin/quizzes/quizzes.component';
 import { AddquizzesComponent } from './main/admin/addquizzes/addquizzes.component';
 import { UpdatequizComponent } from './main/admin/updatequiz/updatequiz.component';
 import { ViewquestionsComponent } from './main/admin/viewquestions/viewquestions.component';
+import { AddquestionComponent } from './main/admin/addquestion/addquestion.component';
 
 
 export function playerFactory(){
@@ -50,6 +51,7 @@ export function playerFactory(){
     AddquizzesComponent,
     UpdatequizComponent,
     ViewquestionsComponent,
+    AddquestionComponent,
   ],
   imports: [
     LottieModule.forRoot({player: playerFactory}),
