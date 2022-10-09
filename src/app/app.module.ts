@@ -24,6 +24,7 @@ import { AddcategoriesComponent } from './main/admin/addcategories/addcategories
 import { QuizzesComponent } from './main/admin/quizzes/quizzes.component';
 import { AddquizzesComponent } from './main/admin/addquizzes/addquizzes.component';
 
+
 export function playerFactory(){
   return player;
 }

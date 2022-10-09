@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HotToastService } from '@ngneat/hot-toast';
+import { QuizService } from 'src/app/services/quiz.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-quizzes',
@@ -7,29 +10,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizzesComponent implements OnInit {
 
-  quizzes = [
-    {
-      qId: 23,
-      title: "Java Series",
-      description: "This is Java",
-      maxMarks: "100",
-      numberOfQuestions: "20",
-      active: ""
-    },
+  quizzes = []
 
-    {
-      qId: 23,
-      title: "Java Series",
-      description: "This is Java",
-      maxMarks: "100",
-      numberOfQuestions: "20",
-      active: ""
-    },
-  ]
-
-  constructor() { }
+  constructor(
+    private quizService: QuizService,
+    private toast: HotToastService,) { }
 
   ngOnInit(): void {
+    this.quizService.quizzes().subscribe(
+      (data: any) => {
+        this.quizzes = data;
+        console.log(data);
+      }, (err) => {
+        this.toast.error("Server Error!",err.message);
+      }
+    );
+  }
+
+
+  deleteQuiz(qid){
+
+      Swal.fire({
+        icon: 'info',
+         title: 'Are you sure?',
+        confirmButtonText: 'Delete',
+        showCancelButton: true
+      }).then((res) => {
+        if(res.isConfirmed){
+          this.quizService.deleteQuiz(qid).subscribe(data => { 
+            this.quizzes = this.quizzes.filter((quiz) => quiz.qid != qid);
+            Swal.fire('Success', 'Quiz Deleted!', 'success');
+           }, (err) => {
+            this.toast.error("Server Error!");
+           });
+        }
+      })
+    
   }
 
 }

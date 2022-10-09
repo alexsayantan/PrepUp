@@ -13,7 +13,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 const material: any[] = [
@@ -30,6 +32,9 @@ const material: any[] = [
   MatListModule,
   MatTableModule,
   MatTooltipModule,
+  MatSlideToggleModule,
+  MatSelectModule,
+  MatDialogModule,
 ];
 
 @NgModule({
