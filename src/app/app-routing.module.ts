@@ -14,6 +14,7 @@ import { CategoriesComponent } from './main/admin/categories/categories.componen
 import { AddcategoriesComponent } from './main/admin/addcategories/addcategories.component';
 import { QuizzesComponent } from './main/admin/quizzes/quizzes.component';
 import { AddquizzesComponent } from './main/admin/addquizzes/addquizzes.component';
+import { UpdatequizComponent } from './main/admin/updatequiz/updatequiz.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -41,6 +42,9 @@ const routes: Routes = [
       { 
         path: 'addquizzes', component: AddquizzesComponent, pathMatch: 'full' 
       },
+      {
+        path: 'quiz/:qid', component: UpdatequizComponent, pathMatch: 'full' 
+      }
     ]
   },
   { path: 'user', component: UserdashboardComponent, pathMatch: 'full', canActivate: [NormalguardGuard] },
