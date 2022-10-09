@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HotToastService } from '@ngneat/hot-toast';
+import { AnimationOptions } from 'ngx-lottie';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
 
@@ -11,12 +12,14 @@ import Swal from 'sweetalert2';
 export class QuizzesComponent implements OnInit {
 
   quizzes = []
+  isActive = false;
 
   constructor(
     private quizService: QuizService,
     private toast: HotToastService,) { }
 
   ngOnInit(): void {
+    console.log(this.quizzes);
     this.quizService.quizzes().subscribe(
       (data: any) => {
         this.quizzes = data;
@@ -25,6 +28,13 @@ export class QuizzesComponent implements OnInit {
         this.toast.error("Server Error!",err.message);
       }
     );
+  }
+
+  options: AnimationOptions = {
+    path: '../../../assets/active.json',
+  }
+  options2: AnimationOptions = {
+    path: '../../../assets/inactive.json',
   }
 
 

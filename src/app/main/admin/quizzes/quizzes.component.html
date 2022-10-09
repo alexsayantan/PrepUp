@@ -3,6 +3,12 @@
         <div mat-subheader>All Quizzes</div>
     </mat-list>    
     <mat-card class="mat-subcard" *ngFor="let q of quizzes">
+        <div *ngIf="!isActive == q.active" class="container-lottie">
+            <ng-lottie matTooltip="active quiz" [options]="options" width="100%" height="40px"></ng-lottie>
+        </div>
+        <div *ngIf="isActive == q.active" class="container-lottie">
+            <ng-lottie matTooltip="Inactive quiz" [options]="options2" width="100%" height="40px"></ng-lottie>
+        </div>
         <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title> {{ q.title }} </mat-card-title>
