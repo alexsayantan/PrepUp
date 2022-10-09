@@ -1,7 +1,7 @@
 <mat-card>
     <mat-list>
         <div mat-subheader>All Quizzes</div>
-    </mat-list>    
+    </mat-list>
     <mat-card class="mat-subcard" *ngFor="let q of quizzes">
         <div *ngIf="!isActive == q.active" class="container-lottie">
             <ng-lottie matTooltip="active quiz" [options]="options" width="100%" height="40px"></ng-lottie>
@@ -16,16 +16,20 @@
         </mat-card-header>
         <mat-card-content>
             <p>
-              {{ q.description }}
+                {{ q.description }}
             </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button class="card-action-button" mat-flat-button color="accent">Questions</button>
+        </mat-card-content>
+        <mat-card-actions>
+            <button class="card-action-button" mat-flat-button color="accent"
+                [routerLink]=" '/admin/view-questions/' + q.qid + '/' + q.title ">Questions</button>
             <button class="card-action-button" mat-stroked-button color="warn">Max Marks {{q.maxMarks}} </button>
-            <button class="card-action-button" mat-stroked-button color="warn">Questions: {{q.numberOfQuestions}} </button>
-            <button class="card-action-button" mat-stroked-button color="warn" [routerLink]=" '/admin/quiz/' + q.qid ">Update</button>
+            <button class="card-action-button" mat-stroked-button color="warn">Questions: {{q.numberOfQuestions}}
+            </button>
+            <button class="card-action-button" mat-stroked-button color="warn"
+                [routerLink]=" '/admin/quiz/' + q.qid ">Update</button>
             <button class="card-action-button" mat-stroked-button color="warn">Attempts</button>
-            <button class="card-action-button" mat-stroked-button color="warn" (click)="deleteQuiz(q.qid)">Delete</button>
+            <button class="card-action-button" mat-stroked-button color="warn"
+                (click)="deleteQuiz(q.qid)">Delete</button>
         </mat-card-actions>
     </mat-card>
     <div class="container text-center m20">
@@ -34,5 +38,3 @@
         </button>
     </div>
 </mat-card>
-
- 

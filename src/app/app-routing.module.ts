@@ -15,6 +15,7 @@ import { AddcategoriesComponent } from './main/admin/addcategories/addcategories
 import { QuizzesComponent } from './main/admin/quizzes/quizzes.component';
 import { AddquizzesComponent } from './main/admin/addquizzes/addquizzes.component';
 import { UpdatequizComponent } from './main/admin/updatequiz/updatequiz.component';
+import { ViewquestionsComponent } from './main/admin/viewquestions/viewquestions.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -44,6 +45,9 @@ const routes: Routes = [
       },
       {
         path: 'quiz/:qid', component: UpdatequizComponent, pathMatch: 'full' 
+      },
+      {
+        path: 'view-questions/:qid/:title', component: ViewquestionsComponent, pathMatch: 'full' 
       }
     ]
   },
