@@ -3,12 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-       background-color: rgb(232, 231, 233); }
+html,
+body {
+    height: 100%;
+}
 
-.text-center { 
-    text-align: center; 
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: rgb(232, 231, 233);
+}
+
+.text-center {
+    text-align: center;
 }
 
 .m20 {
@@ -25,4 +32,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 
 .half-width {
     width: 50%;
+}
+
+.text-left {
+    text-align: left;
 }

@@ -6,6 +6,13 @@ import baseUrl from './helper';
   providedIn: 'root'
 })
 export class QuizService {
+  getActiveQuizzesAndCategory(catId: number) {
+    throw new Error('Method not implemented.');
+  }
+  getActiveQuizesAndCategory //get quiz quiz of category
+    (catId: number) {
+      throw new Error('Method not implemented.');
+  }
 
   constructor(private _http: HttpClient) { }
 
@@ -32,6 +39,21 @@ export class QuizService {
   //update a single quiz
   public updateQuiz(quiz){
     return this._http.put(`${baseUrl}/quiz/`, quiz);
+  }
+
+  //get quizzes from category
+  public getQuizzesOfCategory(id) {
+    return this._http.get(`${baseUrl}/quiz/category/${id}`);
+  }
+
+  //get active quizzes
+  public getActiveQuizzes() {
+    return this._http.get(`${baseUrl}/quiz/active`);
+  }
+
+  //get quiz quiz of category
+  public getActiveQuizzesOfCategory(id){
+    return this._http.get(`${baseUrl}/quiz/category/active/${id}`);
   }
   
 }

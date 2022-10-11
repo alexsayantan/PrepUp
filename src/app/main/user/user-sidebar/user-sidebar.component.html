@@ -1,0 +1,15 @@
+<mat-card class="example-card">
+    <mat-action-list>
+
+        <mat-card-subtitle class="subheader">Categories</mat-card-subtitle>
+        <button class="mat-list-item" mat-list-item routerLink="/user/0">
+            <mat-icon mat-list-icon>apps</mat-icon>
+            All
+        </button>
+        <button [routerLink]="'/user/'+c.id" mat-list-item *ngFor="let c of categories"
+        routerLink="/admin/categories">
+            <mat-icon mat-list-icon>category</mat-icon>
+            {{ c.title }}
+        </button>
+    </mat-action-list>
+</mat-card>

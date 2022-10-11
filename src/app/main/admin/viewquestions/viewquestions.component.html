@@ -2,7 +2,8 @@
     <h1 class="category-heading">Questions on {{ qTitle }} </h1>
     <mat-card-content>
         <div class="container text-center">
-            <button mat-stroked-button class="half-width" color="primary" [routerLink]=" '/admin/add-questions/' + qid + '/' + qTitle "> 
+            <button mat-stroked-button class="half-width" color="primary"
+                [routerLink]=" '/admin/add-questions/' + qid + '/' + qTitle ">
                 <mat-icon>add_circle</mat-icon> Add
             </button>
         </div>
@@ -36,25 +37,15 @@
                                 <mat-divider></mat-divider>
                                 <p class="mt20">Correct Answer : {{q.answer}}</p>
                             </div>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6 end-button">
-                                        <button mat-stroked-button class="color" color="accent">Update</button>
-                                        <button mat-stroked-button class="mlt20" color="warn" (click)="deleteQuestion(q.quesId)">Delete</button>
-                                    </div>
-                                    <div class="col-md-6">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                           
                         </mat-card-content>
-
+                        <mat-card-actions class="mlt20">
+                            <button mat-stroked-button class="color" color="accent">Update</button>
+                            <button mat-stroked-button class="mlt20 mlb20" color="warn"
+                                (click)="deleteQuestion(q.quesId)">Delete</button>
+                        </mat-card-actions>
                     </mat-card>
                 </div>
             </div>
         </div>
     </mat-card-content>
 </mat-card>
-
-

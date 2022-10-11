@@ -27,6 +27,8 @@ import { UpdatequizComponent } from './main/admin/updatequiz/updatequiz.componen
 import { ViewquestionsComponent } from './main/admin/viewquestions/viewquestions.component';
 import { AddquestionComponent } from './main/admin/addquestion/addquestion.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { UserSidebarComponent } from './main/user/user-sidebar/user-sidebar.component';
+import { LoadQuizComponent } from './main/user/load-quiz/load-quiz.component';
 
 
 export function playerFactory(){
@@ -53,6 +55,8 @@ export function playerFactory(){
     UpdatequizComponent,
     ViewquestionsComponent,
     AddquestionComponent,
+    UserSidebarComponent,
+    LoadQuizComponent,
   ],
   imports: [
     LottieModule.forRoot({player: playerFactory}),

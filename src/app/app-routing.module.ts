@@ -17,6 +17,7 @@ import { AddquizzesComponent } from './main/admin/addquizzes/addquizzes.componen
 import { UpdatequizComponent } from './main/admin/updatequiz/updatequiz.component';
 import { ViewquestionsComponent } from './main/admin/viewquestions/viewquestions.component';
 import { AddquestionComponent } from './main/admin/addquestion/addquestion.component';
+import { LoadQuizComponent } from './main/user/load-quiz/load-quiz.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -55,7 +56,12 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'user', component: UserdashboardComponent, pathMatch: 'full', canActivate: [NormalguardGuard] },
+  { path: 'user', component: UserdashboardComponent, canActivate: [NormalguardGuard],
+    children: [
+      {
+        path: ':id', component: LoadQuizComponent, pathMatch: 'full'
+      }
+    ]},
 
 ];
 
