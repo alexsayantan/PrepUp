@@ -20,6 +20,8 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@ckeditor/ckeditor5-angular": "^4.0.0",
+    "@ckeditor/ckeditor5-build-classic": "^35.2.1",
     "@ngneat/hot-toast": "^4.1.0",
     "@sweetalert2/ngx-sweetalert2": "^12.0.1",
     "bootstrap-grid-only-css": "^4.1.3",

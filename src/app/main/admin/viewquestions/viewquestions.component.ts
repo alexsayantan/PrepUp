@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { QuestionService } from 'src/app/services/question.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-viewquestions',
@@ -15,7 +16,7 @@ export class ViewquestionsComponent implements OnInit {
   questions;
 
   constructor(private _route: ActivatedRoute,
-    private _question:  QuestionService, private toast: HotToastService) { }
+    private _question: QuestionService, private toast: HotToastService) { }
 
   ngOnInit(): void {
     this.qid = this._route.snapshot.params['qid'];
@@ -27,6 +28,27 @@ export class ViewquestionsComponent implements OnInit {
         this.toast.error("Server Error!");
       }
     );
+  }
+
+  deleteQuestion(qid) {
+    Swal.fire({
+      icon: "info",
+      showCancelButton: true,
+      confirmButtonText: "Delete",
+      title: "Are you sure?",
+    }).then(
+      (res) => {
+        if (res.isConfirmed) {
+          this._question.deleteQuestion(qid).subscribe(
+            (data) => {
+              this.toast.success("Question deleted successfully!");
+            });
+            this.questions = this.questions.filter((q) => q.quesId != qid); 
+              
+        } (err) => {this.toast.error("Error deleting question!");};
+      }
+    );
+
   }
 
 }

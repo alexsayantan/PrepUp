@@ -36,6 +36,17 @@
                                 <mat-divider></mat-divider>
                                 <p class="mt20">Correct Answer : {{q.answer}}</p>
                             </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 end-button">
+                                        <button mat-stroked-button class="color" color="accent">Update</button>
+                                        <button mat-stroked-button class="mlt20" color="warn" (click)="deleteQuestion(q.quesId)">Delete</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        
+                                    </div>
+                                </div>
+                            </div>
                            
                         </mat-card-content>
 

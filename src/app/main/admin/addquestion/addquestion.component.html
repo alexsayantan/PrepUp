@@ -8,13 +8,15 @@
                     <mat-card-subtitle>Enter the details of new question</mat-card-subtitle>
                     <form class="text-center" (submit)="formSubmit()">
 
-                        <!-- Enter Content -->
+                        <!-- Enter Content
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Content</mat-label>
-                            <textarea [(ngModel)]="question.content" name="content" rows="8" matInput
+                            <<textarea [(ngModel)]="question.content" name="content" rows="8" matInput
                                 placeholder="e.g. Enter Question Description">
-                            </textarea>
-                        </mat-form-field>
+                            </textarea>>
+                        </mat-form-field> -->
+
+                        <ckeditor [editor]="Editor" name="content" [(ngModel)]="question.content" ></ckeditor>
 
                         <div class="row">
                             <div class="col-md-6">

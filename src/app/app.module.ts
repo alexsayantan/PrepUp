@@ -26,6 +26,7 @@ import { AddquizzesComponent } from './main/admin/addquizzes/addquizzes.componen
 import { UpdatequizComponent } from './main/admin/updatequiz/updatequiz.component';
 import { ViewquestionsComponent } from './main/admin/viewquestions/viewquestions.component';
 import { AddquestionComponent } from './main/admin/addquestion/addquestion.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 export function playerFactory(){
@@ -61,6 +62,7 @@ export function playerFactory(){
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CKEditorModule,
     HotToastModule.forRoot({
       position: 'bottom-center',
     })

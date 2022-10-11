@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { QuestionService } from 'src/app/services/question.service';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 
 @Component({
   selector: 'app-addquestion',
@@ -23,6 +25,8 @@ export class AddquestionComponent implements OnInit {
     option4: '',
     answer: '',
   }
+
+  public Editor = ClassicEditor;
   
   constructor(private _route: ActivatedRoute,
     private _question: QuestionService, private _toast: HotToastService) { }
