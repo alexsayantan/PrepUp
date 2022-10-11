@@ -18,6 +18,7 @@ import { UpdatequizComponent } from './main/admin/updatequiz/updatequiz.componen
 import { ViewquestionsComponent } from './main/admin/viewquestions/viewquestions.component';
 import { AddquestionComponent } from './main/admin/addquestion/addquestion.component';
 import { LoadQuizComponent } from './main/user/load-quiz/load-quiz.component';
+import { InstructionsComponent } from './main/user/instructions/instructions.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -60,6 +61,9 @@ const routes: Routes = [
     children: [
       {
         path: ':id', component: LoadQuizComponent, pathMatch: 'full'
+      },
+      {
+        path: 'instructions/:qid', component: InstructionsComponent, pathMatch: 'full'
       }
     ]},
 

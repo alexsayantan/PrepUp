@@ -17,7 +17,7 @@
                     </mat-card-content>
                     <mat-card-actions>
                         <button mat-button color="primary">View</button>
-                        <button mat-button color="warn" matTooltip="Start Examination " >Start</button>
+                        <button mat-button color="warn" matTooltip="Start Examination" [routerLink]="'/user/instructions/'+q.qid" >Start</button>
                         <button mat-button color="warn" matTooltip="Total Questions ">Q: {{ q.numberOfQuestions }} </button>
                     </mat-card-actions>
                 </mat-card>
