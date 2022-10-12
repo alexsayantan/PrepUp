@@ -14,6 +14,10 @@ export class StartQuizComponent implements OnInit {
   qid: number;
   questions: any;
 
+  marksGot:number = 0;
+  correctAnswers: number = 0;
+  attempted: number = 0;
+
   constructor(
     private _location: LocationStrategy,
     private _route: ActivatedRoute,

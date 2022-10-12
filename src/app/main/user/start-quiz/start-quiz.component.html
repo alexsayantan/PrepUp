@@ -11,7 +11,7 @@
                 </ng-container>
                 <mat-card *ngFor="let q of questions; let i = index">
                     <mat-card-content> 
-                        <p [innerHTML]="q.content"></p>
+                        <p class="ml20" [innerHTML]="q.content"></p>
                         <mat-divider>
                         </mat-divider>
                         <div class="row m20">
@@ -36,6 +36,9 @@
                         </div>
                     </mat-card-content>
                 </mat-card>
+                <div class="container text-center mb20">
+                    <button mat-raised-button color="warn">Submit</button>
+                </div>
             </div>
             <div class="col-md-2">
                 
