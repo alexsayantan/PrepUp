@@ -12,19 +12,79 @@
                         </mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content class="ml20">
-                        <h1> {{ quiz.title}} </h1>
+                        <h1> {{ title }} </h1>
                         <p class="m20">Description: </p>
-                        <p> {{ quiz.description }} </p>
+                        <p> {{ description }} </p>
 
                         <mat-divider></mat-divider>
-                        <br/>
-                        <h1>Important instructions</h1>
+                        <br />
+                        <h1>Exam instructions</h1>
+                        <mat-card-subtitle class="m20">
+                            The duration of this exam is <b>{{ numberOfQuestions * 2}} minutes</b>.
+                        </mat-card-subtitle>
                         <ul>
-                            <li></li>
+                            <li>Allow adequate time to complete this exam in one sitting before the due date and
+                                time. Late submissions will not/may not be accepted. </li><br />
+                            <li>There are <b>{{ numberOfQuestions }} questions</b> in this exam and will be presented
+                                one at a time/all at once.</li>
+                            <br />
+                            <li>Each question is worth <b> {{ maxMarks / numberOfQuestions }} marks</b>. </li><br />
+                            <li>The examination is worth 60% of the marks available in this subject. The contribution
+                                each question makes to the total examination mark is indicated in points or as a
+                                percentage. </li><br />
                         </ul>
+
+                        <mat-card-subtitle>Examination Conduct</mat-card-subtitle>
+                        <p>You are not permitted to have on your desk or on your person any unauthorised material during
+                            this examination. This includes but not limited to </p>
+                        <ul>
+                            <li>Mobile phones</li>
+                            <li>Smart watches and bands </li>
+                            <li>Electronic devices (including additional monitors, earphones, headphones etc) </li>
+                            <li>Headwear (hats, hoodies excluding religious headwear) </li>
+                            <li>Draft paper (unless permitted)</li>
+                            <li>Textbooks (unless specified) </li>
+                            <li>Notes (unless specified)</li>
+                        </ul>
+                        <p>You are not permitted to leave your seat during the exam. Please ensure you use the toilet
+                            before the exam starts if necessary. </p>
+                        <p>You will need to be in a quiet space for the duration of your exam with no interruptions.</p>
+                        <p>You will need to check all your equipment to ensure that they are set up correctly. </p>
+                        <p>You must only attempt this exam once. Any additional attempts should only be used in the
+                            event where a serious technical issue has occurred and supporting evidence supporting this
+                            will be required. </p>
+                        <p>You are not permitted to obtain assistance by improper means or ask for help from or give
+                            help to any other person. </p>
+                        <p>You are not permitted to take screenshots, record the screen, copy and paste questions or
+                            answers or otherwise attempt to take any of the content of this exam out of the exam for any
+                            purpose. </p>
+                        <p>You are not permitted to post any requests for clarification of exam content. Answer all
+                            questions to the best of your ability and perception of the question's intent, make
+                            reasonable assumptions if necessary, to answer all questions. PrepUp assessments never apply
+                            negative marking techniques. </p>
+                        <p>Misconduct action will be taken against you if you breach PrepUp's rules. </p><br />
+                        <mat-card-subtitle>By attempting this exam, I acknowledge that </mat-card-subtitle>
+                        <p>
+                            <mat-checkbox #confirmed></mat-checkbox> I agree to be bound by the PrepUp’s rules, codes of
+                            conduct, and other policies relating to examinations.
+                        </p>
+                        <p>
+                            <mat-checkbox #confirmed2></mat-checkbox> I have read and understand the examination conduct
+                            requirements for this examination.
+                        </p>
+                        <p>
+                            <mat-checkbox #confirmed3></mat-checkbox> I am aware of the university’s rules regarding <a
+                                routerLink="#">misconduct during examinations</a>.
+                        </p>
+                        <p>
+                            <mat-checkbox #confirmed4></mat-checkbox> I am not in possession of, nor do I have access
+                            to, any unauthorised material during this examination.
+                        </p>
                     </mat-card-content>
-                    <mat-card-actions>
-                        
+                    <mat-card-actions class="text-center">
+                        <button
+                            [disabled]="!confirmed.checked || !confirmed2.checked || !confirmed3.checked || !confirmed4.checked"
+                            mat-stroked-button color="primary">Start Exam</button>
                     </mat-card-actions>
                 </mat-card>
             </div>

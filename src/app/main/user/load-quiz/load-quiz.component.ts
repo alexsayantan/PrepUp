@@ -13,6 +13,7 @@ export class LoadQuizComponent implements OnInit {
 
   catId: number;
   quizzes;
+  length: number;
 
   constructor(private _route: ActivatedRoute, private _quiz: QuizService,
     private _toast: HotToastService) { }
@@ -33,7 +34,7 @@ export class LoadQuizComponent implements OnInit {
         } else {
           this._quiz.getActiveQuizzesOfCategory(this.catId).subscribe((data) => { 
             this.quizzes = data;
-            console.log(this.quizzes);
+            this.length = this.quizzes.length;
            }, (error)=> {
             this._toast.error("Server Error!");
            });
