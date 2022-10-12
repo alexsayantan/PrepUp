@@ -63,6 +63,7 @@ export class AddquestionComponent implements OnInit {
           answer: '',
         }
         this._toast.success("Question Details Added!");
+        this.ngOnInit();
       }, (err)=>{
         this._toast.error("Error Adding Question!");
       }
