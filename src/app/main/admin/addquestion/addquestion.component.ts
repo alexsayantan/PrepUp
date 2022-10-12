@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { QuestionService } from 'src/app/services/question.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -29,6 +29,7 @@ export class AddquestionComponent implements OnInit {
   public Editor = ClassicEditor;
   
   constructor(private _route: ActivatedRoute,
+    private _router: Router,
     private _question: QuestionService, private _toast: HotToastService) { }
 
   ngOnInit(): void {
@@ -50,7 +51,7 @@ export class AddquestionComponent implements OnInit {
 
     this._question.addQuestion(this.question).subscribe(
       (data)=>{
-        this.question = this.question = {
+        this.question = {
           quiz : {
       
           },

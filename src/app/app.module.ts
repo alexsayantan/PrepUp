@@ -30,6 +30,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { UserSidebarComponent } from './main/user/user-sidebar/user-sidebar.component';
 import { LoadQuizComponent } from './main/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './main/user/instructions/instructions.component';
+import { StartQuizComponent } from './main/user/start-quiz/start-quiz.component';
 
 
 export function playerFactory(){
@@ -59,6 +60,7 @@ export function playerFactory(){
     UserSidebarComponent,
     LoadQuizComponent,
     InstructionsComponent,
+    StartQuizComponent,
   ],
   imports: [
     LottieModule.forRoot({player: playerFactory}),

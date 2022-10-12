@@ -1,0 +1,46 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 mt20 text-center">
+                <!--Instructions-->
+                <h3>Instrutions</h3>
+            </div>
+            <div class="col-md-8 mt20">
+                <ng-container *ngIf="questions">        
+                        <h1>On Going Exam: {{ questions[0].quiz.title }} </h1>
+                </ng-container>
+                <mat-card *ngFor="let q of questions; let i = index">
+                    <mat-card-content> 
+                        <p [innerHTML]="q.content"></p>
+                        <mat-divider>
+                        </mat-divider>
+                        <div class="row m20">
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option1" [name]="i">
+                                {{ q.option1 }}
+                            </div>
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option2" [name]="i">
+                                {{ q.option2 }}
+                            </div>
+                        </div>
+                        <div class="row m20">
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option3" [name]="i">
+                                {{ q.option3 }}
+                            </div>
+                            <div class="col-md-6">
+                                <input type="radio" [value]="q.option4" [name]="i">
+                                {{ q.option4 }}
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-md-2">
+                
+            </div>
+        </div>
+    </div>
+</div>
+

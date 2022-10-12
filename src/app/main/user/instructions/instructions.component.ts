@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 import { QuizService } from 'src/app/services/quiz.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-instructions',
@@ -19,7 +20,9 @@ export class InstructionsComponent implements OnInit {
   maxMarks: number;
 
   constructor(
-    private _route: ActivatedRoute, private _toast:HotToastService,
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _toast:HotToastService,
     private _quiz: QuizService
   ) { }
 
@@ -36,8 +39,25 @@ export class InstructionsComponent implements OnInit {
     }, (err) => {
       this._toast.error("Error Loding Exam!");
     });
+  }
 
-
+  startQuiz(){
+    Swal.fire({
+      title: "Once you start the exam you can't leave!",
+      icon: 'info',
+      showConfirmButton: true,
+      showDenyButton: true,
+      confirmButtonText: 'Start',
+      denyButtonText: 'Cancel',
+    }).then(
+      (result)=>{
+        if(result.isConfirmed){
+          this._router.navigate(['/start/'+this.quiz.qid]);
+        } else if(result.isDenied){
+          this._toast.warning('Exam not started. Please try again.');
+        }
+      }
+    );
   }
 
 

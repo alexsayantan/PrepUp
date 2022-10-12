@@ -19,6 +19,7 @@ import { ViewquestionsComponent } from './main/admin/viewquestions/viewquestions
 import { AddquestionComponent } from './main/admin/addquestion/addquestion.component';
 import { LoadQuizComponent } from './main/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './main/user/instructions/instructions.component';
+import { StartQuizComponent } from './main/user/start-quiz/start-quiz.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -64,8 +65,12 @@ const routes: Routes = [
       },
       {
         path: 'instructions/:qid', component: InstructionsComponent, pathMatch: 'full'
-      }
-    ]},
+      },
+    ]
+  },
+  {
+    path: 'start/:qid', component: StartQuizComponent, pathMatch: 'full', canActivate: [NormalguardGuard ]
+  }
 
 ];
 
