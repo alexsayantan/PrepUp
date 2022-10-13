@@ -17,6 +17,8 @@ export class StartQuizComponent implements OnInit {
   marksGot:number = 0;
   correctAnswers: number = 0;
   attempted: number = 0;
+  isSubmit: boolean = false;
+  timer:any;
 
   constructor(
     private _location: LocationStrategy,
@@ -35,10 +37,10 @@ export class StartQuizComponent implements OnInit {
     .subscribe(
       (data: any) =>{
         this.questions = data;
+        this.timer = this.questions.length * 2 * 60;
         this.questions.forEach((q:any) => {
           q['givenAnswer'] = '';
         });
-        console.log(this.questions);
         }, (err: any) => { Swal.fire("Error","Error while loading questions!","error")}
     );
   }
@@ -49,5 +51,34 @@ export class StartQuizComponent implements OnInit {
       ()=>{ history.pushState(null, null, location.href ); },
     );
   }
+
+  submitQuiz(){
+    Swal.fire({
+      title: "Do you want to submit the exam?",
+
+      showCancelButton: true,
+      confirmButtonText: "Submit",
+      icon: "info"
+    }).then(
+      (e)=>{
+        if(e.isConfirmed){
+          this.isSubmit = true;
+          this.questions.forEach(q =>{
+            if(q.givenAnswer == q.answer){
+              this.correctAnswers++;
+              let marksSingle = this.questions[0].quiz.maxMarks/this.questions.length;
+              this.marksGot += marksSingle;
+            }
+            
+            if(q.givenAnswer.trim() != ''){
+              this.attempted++;
+            }
+
+          });
+        }
+      }
+    );
+  }
+  
 
 }

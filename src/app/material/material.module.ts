@@ -16,6 +16,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 const material: any[] = [
@@ -35,6 +36,7 @@ const material: any[] = [
   MatSlideToggleModule,
   MatSelectModule,
   MatDialogModule,
+  MatProgressSpinnerModule
 ];
 
 @NgModule({
