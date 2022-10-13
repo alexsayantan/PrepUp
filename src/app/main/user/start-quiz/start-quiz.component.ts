@@ -35,6 +35,10 @@ export class StartQuizComponent implements OnInit {
     .subscribe(
       (data: any) =>{
         this.questions = data;
+        this.questions.forEach((q:any) => {
+          q['givenAnswer'] = '';
+        });
+        console.log(this.questions);
         }, (err: any) => { Swal.fire("Error","Error while loading questions!","error")}
     );
   }
