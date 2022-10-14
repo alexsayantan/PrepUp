@@ -31,11 +31,22 @@ import { UserSidebarComponent } from './main/user/user-sidebar/user-sidebar.comp
 import { LoadQuizComponent } from './main/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './main/user/instructions/instructions.component';
 import { StartQuizComponent } from './main/user/start-quiz/start-quiz.component';
-
+import { ResultComponent } from './main/user/result/result.component';
+import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, PB_DIRECTION, POSITION, SPINNER } from "ngx-ui-loader";
 
 export function playerFactory(){
   return player;
 }
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  bgsColor: "red",
+  bgsPosition: POSITION.bottomCenter,
+  fgsColor: "#673ab7",
+  text: "Loading...",
+  fgsSize: 80,
+  hasProgressBar: false,
+  fgsType: SPINNER.squareJellyBox,
+};
 
 @NgModule({
   declarations: [
@@ -61,6 +72,7 @@ export function playerFactory(){
     LoadQuizComponent,
     InstructionsComponent,
     StartQuizComponent,
+    ResultComponent
   ],
   imports: [
     LottieModule.forRoot({player: playerFactory}),
@@ -73,7 +85,11 @@ export function playerFactory(){
     CKEditorModule,
     HotToastModule.forRoot({
       position: 'bottom-center',
-    })
+    }),
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true,
+    }),
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

@@ -20,6 +20,7 @@ import { AddquestionComponent } from './main/admin/addquestion/addquestion.compo
 import { LoadQuizComponent } from './main/user/load-quiz/load-quiz.component';
 import { InstructionsComponent } from './main/user/instructions/instructions.component';
 import { StartQuizComponent } from './main/user/start-quiz/start-quiz.component';
+import { ResultComponent } from './main/user/result/result.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -69,7 +70,10 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'start/:qid', component: StartQuizComponent, pathMatch: 'full', canActivate: [NormalguardGuard ]
+    path: 'start/:qid', component: StartQuizComponent,pathMatch: 'full', canActivate: [NormalguardGuard ]
+  },
+  {
+    path: 'result/:marksGot/:corretAnswers/:attempted', component: ResultComponent, pathMatch: 'full'
   }
 
 ];
