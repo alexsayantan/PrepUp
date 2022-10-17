@@ -44,7 +44,6 @@ export class StartQuizComponent implements OnInit {
           this.timer = this.questions.length * 2 * 60;
 
           this.len = this.questions.length;
-          console.log(this.questions);
           this.startTimer();
         }, (err: any) => { Swal.fire("Error", "Error while loading questions!", "error") }
       );
@@ -67,7 +66,6 @@ export class StartQuizComponent implements OnInit {
       (e) => {
         if (e.isConfirmed) {
           this.evalQuiz();
-          this._router.navigate(["result"]);
         }
       }
     );
@@ -97,7 +95,7 @@ export class StartQuizComponent implements OnInit {
     this._question.evalQuiz(this.questions).subscribe(
       (data)=>{
         this.eval = data;
-        this._router.navigate(['result/'+this.eval.marksGot+'/'+this.eval.correctAnswers+'/'+this.eval.attempted])
+        this._router.navigate(['result/'+this.eval.marksGot+'/'+this.eval.correctAnswers+'/'+this.eval.attempted+'/'+this.qid])
       }, (error)=>{
         console.log(error);
       }
