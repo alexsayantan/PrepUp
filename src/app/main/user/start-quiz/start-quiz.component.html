@@ -54,7 +54,7 @@
                     </mat-card-header>
                     <mat-card-content>
                         <h1 class="text-center"> {{ getFormattedTime() }} </h1>
-                        <mat-spinner [value]="(timer/(this.questions.length * 2 * 60)) * 100" color="accent" mode="determinate" class="spinner"></mat-spinner>
+                        <mat-spinner [value]="(timer/(len * 2 * 60)) * 100" color="accent" mode="determinate" class="spinner"></mat-spinner>
                     </mat-card-content>
                 </mat-card>
             </div>

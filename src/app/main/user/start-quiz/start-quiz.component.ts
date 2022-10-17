@@ -12,19 +12,22 @@ import Swal from 'sweetalert2';
 export class StartQuizComponent implements OnInit {
 
   qid: number;
-  questions: any;
-
-  marksGot: number = 0;
-  correctAnswers: number = 0;
-  attempted: number = 0;
+  questions;
   isSubmit: boolean = false;
   timer: any;
+  len: number;
+
+  eval:any = {
+    marksGot: '',
+    correctAnswers: '',
+    attempted: ''
+  }
 
   constructor(
     private _location: LocationStrategy,
     private _route: ActivatedRoute,
     private _question: QuestionService,
-    private _router: Router,
+    private _router: Router
   ) { }
 
   ngOnInit(): void {
@@ -39,9 +42,9 @@ export class StartQuizComponent implements OnInit {
         (data: any) => {
           this.questions = data;
           this.timer = this.questions.length * 2 * 60;
-          this.questions.forEach((q: any) => {
-            q['givenAnswer'] = '';
-          });
+
+          this.len = this.questions.length;
+          console.log(this.questions);
           this.startTimer();
         }, (err: any) => { Swal.fire("Error", "Error while loading questions!", "error") }
       );
@@ -64,6 +67,7 @@ export class StartQuizComponent implements OnInit {
       (e) => {
         if (e.isConfirmed) {
           this.evalQuiz();
+          this._router.navigate(["result"]);
         }
       }
     );
@@ -89,18 +93,15 @@ export class StartQuizComponent implements OnInit {
   }
 
   evalQuiz() {
-    this.isSubmit = true;
-    this.questions.forEach(q => {
-      if (q.givenAnswer == q.answer) {
-        this.correctAnswers++;
-        let marksSingle = this.questions[0].quiz.maxMarks / this.questions.length;
-        this.marksGot += marksSingle;
+    //calling server to check questions
+    this._question.evalQuiz(this.questions).subscribe(
+      (data)=>{
+        this.eval = data;
+        this._router.navigate(['result/'+this.eval.marksGot+'/'+this.eval.correctAnswers+'/'+this.eval.attempted])
+      }, (error)=>{
+        console.log(error);
       }
-      if (q.givenAnswer.trim() != '') {
-        this.attempted++;
-      }
-      this._router.navigate(['/result/'+this.marksGot+'/'+this.correctAnswers+'/'+this.attempted])
-    });
+    );
   }
 
 }
