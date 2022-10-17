@@ -3,7 +3,16 @@
         <div class="row">
             <div class="col-md-2 mt20 text-center">
                 <!--Instructions-->
-                <h3>Instrutions</h3>
+                <mat-card class="mt40">
+                    <mat-card-content>
+                        <h3><b>Instrutions</b></h3>
+                        <ul>
+                            <li>Do not refresh the page.</li>
+                            <li>Do not switch the tab.</li>
+                            <li>Do not minimize the window.</li>
+                        </ul>
+                    </mat-card-content>
+                </mat-card>
             </div>
             <div class="col-md-8 mt20">
                 <ng-container *ngIf="questions">
@@ -16,25 +25,21 @@
                         </mat-divider>
                         <div class="row m20">
                             <div class="col-md-6 col-6">
-                                <input type="radio" [value]="q.option1" [name]="i"
-                                    [(ngModel)]="q.givenAnswer"/>
+                                <input type="radio" [value]="q.option1" [name]="i" [(ngModel)]="q.givenAnswer" />
                                 {{ q.option1 }}
                             </div>
                             <div class="col-md-6 col-6">
-                                <input type="radio" [value]="q.option2" [name]="i"
-                                [(ngModel)]="q.givenAnswer"/>
+                                <input type="radio" [value]="q.option2" [name]="i" [(ngModel)]="q.givenAnswer" />
                                 {{ q.option2 }}
                             </div>
                         </div>
                         <div class="row m20">
                             <div class="col-md-6 col-6">
-                                <input type="radio" [value]="q.option3" [name]="i"
-                                [(ngModel)]="q.givenAnswer" />
+                                <input type="radio" [value]="q.option3" [name]="i" [(ngModel)]="q.givenAnswer" />
                                 {{ q.option3 }}
                             </div>
                             <div class="col-md-6 col-6">
-                                <input type="radio" [value]="q.option4" [name]="i"
-                                [(ngModel)]="q.givenAnswer" />
+                                <input type="radio" [value]="q.option4" [name]="i" [(ngModel)]="q.givenAnswer" />
                                 {{ q.option4 }}
                             </div>
                         </div>
@@ -49,12 +54,13 @@
                     <mat-card-header>
                         <mat-card-title>Progress</mat-card-title>
                         <mat-card-subtitle>
-                            Exam will automatically submitted when timer reaches to <b>00:00</b> 
+                            Exam will automatically submitted when timer reaches to <b>00:00</b>
                         </mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>
                         <h1 class="text-center"> {{ getFormattedTime() }} </h1>
-                        <mat-spinner [value]="(timer/(len * 2 * 60)) * 100" color="accent" mode="determinate" class="spinner"></mat-spinner>
+                        <mat-spinner [value]="(timer/(len * 2 * 60)) * 100" color="accent" mode="determinate"
+                            class="spinner"></mat-spinner>
                     </mat-card-content>
                 </mat-card>
             </div>
