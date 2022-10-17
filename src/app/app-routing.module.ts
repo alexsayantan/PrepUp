@@ -73,7 +73,7 @@ const routes: Routes = [
     path: 'start/:qid', component: StartQuizComponent,pathMatch: 'full', canActivate: [NormalguardGuard ]
   },
   {
-    path: 'result/:marksGot/:corretAnswers/:attempted', component: ResultComponent, pathMatch: 'full'
+    path: 'result/:marksGot/:correctAnswers/:attempted', component: ResultComponent, pathMatch: 'full'
   }
 
 ];
