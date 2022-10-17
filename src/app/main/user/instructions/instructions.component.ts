@@ -18,6 +18,7 @@ export class InstructionsComponent implements OnInit {
   description: string;
   numberOfQuestions: number;
   maxMarks: number;
+  marksSingle: number;
 
   constructor(
     private _route: ActivatedRoute,
@@ -39,6 +40,7 @@ export class InstructionsComponent implements OnInit {
     }, (err) => {
       this._toast.error("Error Loding Exam!");
     });
+    
   }
 
   startQuiz(){
@@ -59,8 +61,6 @@ export class InstructionsComponent implements OnInit {
       }
     );
   }
-
-
 
 }
 

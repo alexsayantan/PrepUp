@@ -3,7 +3,7 @@
         <div class="col-md-6 offset-md-3">
             <mat-card>
                 <mat-card-header>
-                    <mat-card-title>
+                    <mat-card-title class="heading">
                         Quiz Result
                     </mat-card-title>
                 </mat-card-header>
@@ -13,7 +13,7 @@
                     <h1>Questions Attempted: {{ attempted }} </h1>
                 </mat-card-content>
                 <mat-card-actions class="text-center">
-                    <button mat-raised-button color="primary">Print</button>
+                    <button mat-raised-button color="primary" (click)="printData()">Print</button>
                     <button mat-raised-button color="warn" routerLink="/home">Home</button>
                 </mat-card-actions>
             </mat-card>

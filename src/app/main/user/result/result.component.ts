@@ -46,4 +46,8 @@ export class ResultComponent implements OnInit {
       () => { history.pushState(null, null, location.href); },
     );
   }
+
+  public printData(){
+    window.print();
+  }
 }
