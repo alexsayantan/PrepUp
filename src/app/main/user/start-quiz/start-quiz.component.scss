@@ -1,5 +1,9 @@
 .mat-card {
     margin: 2rem 0.9rem 2rem 0;   
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .mt20 {
@@ -14,6 +18,18 @@
 }
 
 .spinner {
-    margin: auto;
-    
+    margin: auto;   
+}
+
+.monitor {
+    background-color: rgb(107, 107, 107);
+    height: 140px;
+    width: 100%;
+    border-color: azure;
+    border-radius: 20px;
+}
+
+.row1 {
+    padding: 1rem;
+    color: rgb(122, 3, 3);
 }
