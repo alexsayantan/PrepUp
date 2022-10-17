@@ -1,16 +1,19 @@
 <div class="bootstrap-wrapper">
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-6 offset-md-3 col-10 offset-1">
             <mat-card>
                 <mat-card-header>
                     <mat-card-title class="heading">
                         Quiz Result
                     </mat-card-title>
                 </mat-card-header>
+                <mat-divider></mat-divider>
+                <br>
                 <mat-card-content class="text-center">
-                    <h1>Marks Got : {{ marksGot }} / {{ totalMarks.maxMarks }} </h1>
-                    <h1>Correct Answers : {{ correctAnswers }} </h1>
-                    <h1>Questions Attempted: {{ attempted }} </h1>
+                    <ng-lottie class="lottie" [options]="option" width="150px"></ng-lottie>
+                    <h3>Marks Got : {{ marksGot }} / {{ totalMarks.maxMarks }} </h3>
+                    <h3>Correct Answers : {{ correctAnswers }} </h3>
+                    <h3>Questions Attempted: {{ attempted }} </h3>
                 </mat-card-content>
                 <mat-card-actions class="text-center">
                     <button mat-raised-button color="primary" (click)="printData()">Print</button>

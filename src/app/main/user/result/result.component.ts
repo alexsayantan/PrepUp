@@ -2,7 +2,7 @@ import { LocationStrategy } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
-import { QuestionService } from 'src/app/services/question.service';
+import { AnimationOptions } from 'ngx-lottie';
 import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
@@ -24,6 +24,11 @@ export class ResultComponent implements OnInit {
     private _route: ActivatedRoute,
     private _quiz: QuizService,
     private _toast: HotToastService) { }
+
+    option: AnimationOptions = {
+      path: 'https://assets4.lottiefiles.com/packages/lf20_i4zw2ddg.json',
+      loop: false,
+    }
 
   ngOnInit(): void {
     this.preventBackButton();

@@ -41,7 +41,7 @@ export function playerFactory(){
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: "red",
   bgsPosition: POSITION.bottomCenter,
-  fgsColor: "#673ab7",
+  fgsColor: "#f12997",
   text: "Loading...",
   fgsSize: 80,
   hasProgressBar: false,
