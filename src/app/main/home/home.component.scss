@@ -1,7 +1,25 @@
 .example-spacer {
-    flex: 1 1 auto;
+    flex: 0.97 1 auto;
   }
 
 .example-icon {
     margin-right: 1rem;
+}
+
+.hero-toolbar {
+  padding: 1rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000;
+  background-image: url('https://cdn.dribbble.com/users/1374371/screenshots/16044320/media/332fd418ecf1c0da47b985ccd0c008b5.mp4');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  color: #fff;
+  padding: 0 8%;
 }

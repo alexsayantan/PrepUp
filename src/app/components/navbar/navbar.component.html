@@ -6,12 +6,7 @@
         <span class="user-firstname expand-color">{{ user.firstName }}</span>
         <mat-icon class="expand-color">expand_more</mat-icon>
     </button>
-    <a class="c-nav-list__link c-nav-list__link--logo" href="/" aria-label="Home"><div class="c-logo">
-        <div class="c-logo__eye" style="transform: rotate(93.3582deg);">
-          <div class="c-logo__iris"></div>
-        </div>
-      </div>
-      </a>
+    
     <mat-menu #afterMenu="matMenu" xPosition="before">
         <button *ngIf="!isLoggedIn" mat-menu-item>
             <mat-icon>login</mat-icon>
