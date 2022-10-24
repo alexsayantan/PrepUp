@@ -34,6 +34,7 @@ import { StartQuizComponent } from './main/user/start-quiz/start-quiz.component'
 import { ResultComponent } from './main/user/result/result.component';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, PB_DIRECTION, POSITION, SPINNER } from "ngx-ui-loader";
 
+
 export function playerFactory(){
   return player;
 }
